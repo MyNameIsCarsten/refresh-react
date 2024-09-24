@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face{
+    font-family: "Optimistic_Display";
+    src: url('./assets/fonts/Optimistic_Display_W_Bd.woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: "Optimistic_Display";
+    src: url('./assets/fonts/Optimistic_Display_W_Md.woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: "Optimistic_Display";
+    src: url('./assets/fonts/Optimistic_Display_W_SBd.woff2');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: "Optimistic_Text";
+    src: url('./assets/fonts/Optimistic_Text_W_Bd.woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: "Optimistic_Text";
+    src: url('./assets/fonts/Optimistic_Text_W_It.woff2');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face{
+    font-family: "Optimistic_Text";
+    src: url('./assets/fonts/Optimistic_Text_W_Md.woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: "Optimistic_Text";
+    src: url('./assets/fonts/Optimistic_Text_W_Rg.woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family: "Optimistic_Display", ui-sans-serif;
+}
+
+p {
+    font-family: "Optimistic_Text", ui-sans-serif;
+    white-space: pre-wrap;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.code-p {
+    color: rgb(64 71 86);
+    padding: 1px .25rem;
+    background-color: rgb(153 161 179 / 0.1);
+    border-radius: .375rem;
+}
+
+code span {
+    font-size: .9rem;
+}

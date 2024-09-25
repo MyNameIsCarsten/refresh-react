@@ -4,10 +4,10 @@ import H2Element from "../components/H2Element.tsx";
 
 interface Props {}
 
-function LifecyclePage({}: Props) {
+function UseEffectPage({}: Props) {
     return (
         <div>
-            <H1Element text={"LifecyclePage"} id="" />
+            <H1Element text={"useEffect-Hook"} id="" />
             <p>The life of a React components can be split into three stages.</p>
             <ul className="list-disc ml-12">
                 <li>It <i>mounts</i> - The component is added to the screen.</li>
@@ -54,4 +54,4 @@ function LifecyclePage({}: Props) {
     );
 }
 
-export default LifecyclePage;
+export default UseEffectPage;

@@ -13,7 +13,8 @@ import VitestTesting from "./Pages/VitestTesting.tsx";
 import JestDomMatchersPage from "./Pages/JestDomMatchersPage.tsx";
 import InteractionTesting from "./Pages/InteractionTesting.tsx";
 import MockingComponents from "./Pages/MockingComponents.tsx";
-import LifecyclePage from "./Pages/LifecyclePage.tsx";
+import UseEffectPage from "./Pages/UseEffectPage.tsx";
+import UseStatePage from "./Pages/UseStatePage.tsx";
 
 function App() {
     const [activeSidebarItem, setActiveSidebarItem] = useState('');
@@ -42,12 +43,18 @@ function App() {
                         handleClick={() => handleClickOnSidebarItem("Styling")}
                     />
                     <hr className="my-3"/>
-                    <span className="px-3 italic font-medium text-gray-600 ">Chapter 02</span>
+                    <span className="px-3 italic font-medium text-gray-600 ">Chapter 02: Hooks</span>
                     <SidebarItem
-                        icon={activeSidebarItem === "Lifecycles" ? <BookOpen size={20}/> : <Book size={20}/>}
-                        text="Lifecycles"
-                        isActive={activeSidebarItem === "Lifecycles"}
-                        handleClick={() => handleClickOnSidebarItem("Lifecycles")}
+                        icon={activeSidebarItem === "useState" ? <BookOpen size={20}/> : <Book size={20}/>}
+                        text="useState"
+                        isActive={activeSidebarItem === "useState"}
+                        handleClick={() => handleClickOnSidebarItem("useState")}
+                    />
+                    <SidebarItem
+                        icon={activeSidebarItem === "useEffect" ? <BookOpen size={20}/> : <Book size={20}/>}
+                        text="useEffect"
+                        isActive={activeSidebarItem === "useEffect"}
+                        handleClick={() => handleClickOnSidebarItem("useEffect")}
                     />
                     <hr className="my-3"/>
                     <span className="px-3 italic font-medium text-gray-600 ">Chapter 03</span>
@@ -116,8 +123,11 @@ function App() {
                         <Route path="/styling" element={<LessonPage children={
                             <StylingPage/>
                         }/>}/>
-                        <Route path="/lifecycles" element={<LessonPage children={
-                            <LifecyclePage/>
+                        <Route path="/usestate" element={<LessonPage children={
+                            <UseStatePage/>
+                        }/>}/>
+                        <Route path="/useEffect" element={<LessonPage children={
+                            <UseEffectPage/>
                         }/>}/>
                         <Route path="/react-router" element={<LessonPage children={
                             <ReactRouterPage />

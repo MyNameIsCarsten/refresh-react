@@ -15,6 +15,9 @@ import InteractionTesting from "./Pages/InteractionTesting.tsx";
 import MockingComponents from "./Pages/MockingComponents.tsx";
 import UseEffectPage from "./Pages/UseEffectPage.tsx";
 import UseStatePage from "./Pages/UseStatePage.tsx";
+import UseReducerPage from "./Pages/UseReducerPage.tsx";
+import UseContextPage from "./Pages/UseContextPage.tsx";
+import Redux from "./Pages/Redux.tsx";
 
 function App() {
     const [activeSidebarItem, setActiveSidebarItem] = useState('');
@@ -56,6 +59,18 @@ function App() {
                         isActive={activeSidebarItem === "useEffect"}
                         handleClick={() => handleClickOnSidebarItem("useEffect")}
                     />
+                    <SidebarItem
+                        icon={activeSidebarItem === "useReducer" ? <BookOpen size={20}/> : <Book size={20}/>}
+                        text="useReducer"
+                        isActive={activeSidebarItem === "useReducer"}
+                        handleClick={() => handleClickOnSidebarItem("useReducer")}
+                    />
+                    <SidebarItem
+                        icon={activeSidebarItem === "useContext" ? <BookOpen size={20}/> : <Book size={20}/>}
+                        text="useContext"
+                        isActive={activeSidebarItem === "useContext"}
+                        handleClick={() => handleClickOnSidebarItem("useContext")}
+                    />
                     <hr className="my-3"/>
                     <span className="px-3 italic font-medium text-gray-600 ">Chapter 03</span>
                     <SidebarItem
@@ -65,7 +80,7 @@ function App() {
                         handleClick={() => handleClickOnSidebarItem("React Router")}
                     />
                     <hr className="my-3"/>
-                    <span className="px-3 italic font-medium text-gray-600 ">Chapter 04</span>
+                    <span className="px-3 italic font-medium text-gray-600 ">Chapter 04: Testing</span>
                     <SidebarItem
                         icon={activeSidebarItem === "Setting up Vitest" ? <BookOpen size={20}/> : <Book size={20}/>}
                         text="Setting up Vitest"
@@ -97,6 +112,14 @@ function App() {
                         handleClick={() => handleClickOnSidebarItem("Mocking Components")}
                     />
                     <hr className="my-3"/>
+                    <span className="px-3 italic font-medium text-gray-600 ">Chapter 05: Redux</span>
+                    <SidebarItem
+                        icon={activeSidebarItem === "Redux" ? <BookOpen size={20}/> : <Book size={20}/>}
+                        text="Redux"
+                        isActive={activeSidebarItem === "Redux"}
+                        handleClick={() => handleClickOnSidebarItem("Redux")}
+                    />
+                    <hr className="my-3"/>
                     <SidebarItem
                         icon={<Settings size={20}/>}
                         text="Settings"
@@ -113,7 +136,7 @@ function App() {
 
                 <main className={`flex justify-center items-center w-full ${expanded ? "ml-[288px]" : ""} `}>
 
-                    <Routes>
+                <Routes>
                         <Route path="/" element={<LessonPage children={
                             <GettingStartedPage/>
                         }/>}/>
@@ -128,6 +151,12 @@ function App() {
                         }/>}/>
                         <Route path="/useEffect" element={<LessonPage children={
                             <UseEffectPage/>
+                        }/>}/>
+                        <Route path="/useReducer" element={<LessonPage children={
+                            <UseReducerPage/>
+                        }/>}/>
+                        <Route path="/useContext" element={<LessonPage children={
+                            <UseContextPage/>
                         }/>}/>
                         <Route path="/react-router" element={<LessonPage children={
                             <ReactRouterPage />
@@ -146,6 +175,9 @@ function App() {
                         }/>} />
                         <Route path="/mocking-components" element={<LessonPage children={
                             <MockingComponents />
+                        }/>} />
+                        <Route path="/redux" element={<LessonPage children={
+                            <Redux />
                         }/>} />
                         <Route path="*" element={<NotFoundPage />} /> // default path
                     </Routes>

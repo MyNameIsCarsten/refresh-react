@@ -72,6 +72,12 @@ i {
     font-weight: bold;
 }
 
+.code-p a {
+    color: rgb(217 119 6 / 1);
+    font-style: italic;
+    font-weight: 700;
+}
+
 .code-p {;
     color: hsl(0, 0%, 10%);
     padding: 1px .25rem;
